@@ -1,0 +1,35 @@
+{
+  "name": "bah-express-functions",
+  "main": "lib/index.js",
+  "private": true,
+  "scripts": {
+    "fix": "eslint --ext .js,.ts . --fix",
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ses": "3.621.0",
+    "firebase-admin": "12.3.0",
+    "firebase-functions": "5.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "eslint": "8.57.0",
+    "eslint-config-google": "0.14.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "firebase-functions-test": "3.3.0",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4"
+  },
+  "engines": {
+    "node": "20"
+  }
+}
